@@ -1,0 +1,54 @@
+{
+  "parserOptions": {
+    "ecmaVersion": 2015,
+    "sourceType": "module"
+  },
+  "env": {
+    "browser": true,
+    "es6": true
+  },
+  "settings": {
+    "react": {
+      "version": "18"
+    }
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:react-hooks/recommended"
+  ],
+  "plugins": ["react", "react-hooks"],
+  "rules": {
+    "react/react-in-jsx-scope": "off",
+    "semi-style": ["error", "last"],
+    "semi": ["error", "always"],
+    "arrow-parens": ["warn", "as-needed"],
+    "no-console": "warn",
+    "no-trailing-spaces": "warn",
+    "no-debugger": "warn",
+    "camelcase": "warn",
+    "eol-last": "error",
+    "comma-dangle": [
+      "error",
+      {
+        "arrays": "always-multiline",
+        "imports": "always-multiline",
+        "exports": "always-multiline",
+        "objects": "always-multiline"
+      }
+    ],
+    "eqeqeq": ["error", "always"],
+    "func-style": ["error", "expression"],
+    "spaced-comment": ["warn", "always"],
+    "quotes": ["error", "single", { "allowTemplateLiterals": false }],
+    "prefer-template": ["warn"],
+    "prefer-const": ["warn"],
+    "object-shorthand": ["warn", "always"],
+    "arrow-body-style": ["warn", "as-needed"],
+    "no-unused-vars": ["warn"],
+    "no-unused-expressions": ["warn"],
+    "no-unreachable": ["error"],
+    "no-empty": ["error"],
+    "no-empty-function": ["error"]
+  }
+}
