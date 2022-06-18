@@ -1,6 +1,6 @@
 {
   "parserOptions": {
-    "ecmaVersion": 2015,
+    "ecmaVersion": "latest",
     "sourceType": "module"
   },
   "env": {
@@ -20,6 +20,7 @@
   "plugins": ["react", "react-hooks"],
   "rules": {
     "react/react-in-jsx-scope": "off",
+    "react/prop-types": "off",
     "semi-style": ["error", "last"],
     "semi": ["error", "always"],
     "arrow-parens": ["warn", "as-needed"],
@@ -46,7 +47,6 @@
     "object-shorthand": ["warn", "always"],
     "arrow-body-style": ["warn", "as-needed"],
     "no-unused-vars": ["warn"],
-    "no-unused-expressions": ["warn"],
     "no-unreachable": ["error"],
     "no-empty": ["error"],
     "no-empty-function": ["error"]
