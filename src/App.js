@@ -1,11 +1,12 @@
-import './App.css';
+import theme from 'style/theme';
+import { ThemeProvider } from 'styled-components';
 import SearchPage from './pages/SearchPage/SearchPage';
 
 const App = () => (
-  <>
+  <ThemeProvider theme={theme}>
     <SearchPage />
     {/* <HomePage /> */}
-  </>
+  </ThemeProvider>
 );
 
 export default App;

@@ -1,4 +1,4 @@
-import SearchInputField from 'components/SearchInputField/SearchInputField';
+import SearchInputField from 'components/SearchInputField';
 import './SearchPage.scss';
 
 const SearchPage = () => (
