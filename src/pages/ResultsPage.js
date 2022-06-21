@@ -1,7 +1,7 @@
 import { Avatar, Button, IconButton, SearchInputField } from 'components';
 import { MdApps } from 'react-icons/md';
 
-const SearchPage = () => (
+const ResultsPage = () => (
   <>
     <p>Search Page works!</p>
     <SearchInputField />
@@ -14,4 +14,4 @@ const SearchPage = () => (
   </>
 );
 
-export default SearchPage;
+export default ResultsPage;

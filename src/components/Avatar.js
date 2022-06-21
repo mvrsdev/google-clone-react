@@ -4,8 +4,8 @@ import IconButton from './IconButton';
 const ImageContainer = styled.div`
   background: blue;
   border-radius: 50%;
-  height: 100%;
-  width: 100%;
+  height: 80%;
+  width: 90%;
 `;
 
 const Avatar = () => (
