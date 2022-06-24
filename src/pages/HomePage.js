@@ -2,7 +2,7 @@ import { Header } from 'components';
 
 
 const HomePage = () => (
-  < Header isVisibleGmailImage={false}/>
+  < Header isVisibleGmailImage={true}/>
 );
 
 

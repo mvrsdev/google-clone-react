@@ -1,5 +1,6 @@
 import { MdSettings } from 'react-icons/md';
 import styled from 'styled-components';
+import Button from './Button';
 import IconButton from './IconButton';
 
 const HeaderRow = styled.div`
@@ -20,28 +21,9 @@ const HeaderRow = styled.div`
     }
   }
 
-  #login-button {
-    background-color: #1a73e8;
-    border: none;
-    color: white;
-    padding: 9px 23px;
-    font-weight: 500;
-    letter-spacing: 0.25px;
-    line-height: 16px;
-    margin-left: 10px;
-    margin-right: 8px;
-    font-size: 14px;
-    text-align: center;
-    cursor: pointer;
-    border-radius: 4px;
-    -webkit-border-radius: 4px;
-    &:hover {
-      background: #4285f4;
-    }
-  }
-  .material-icons.md-dark {
-    color: rgba(0, 0, 0, 0.54);
-  }
+Button {
+  margin: 9px 23px;
+}
 `;
 
 const Header = ({ isVisibleGmailImage }) => {
@@ -60,7 +42,7 @@ const Header = ({ isVisibleGmailImage }) => {
   return (
     <HeaderRow>
       {isVisibleGmailImage ? renderGmailImage() : renderSettings()}
-      <button id="login-button">Fazer login</button>
+      <Button primary> Fazer login</Button>
     </HeaderRow>
   );
 };
