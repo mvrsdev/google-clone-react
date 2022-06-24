@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import Button from './Button';
 
 const HeaderRow = styled.div`
   display: flex;
@@ -20,24 +19,24 @@ const HeaderRow = styled.div`
   }
 
   #login-button {
-  background-color: #1a73e8;
-  border: none;
-  color: white;
-  padding: 9px 23px;
-  font-weight: 500;
-  letter-spacing: 0.25px;
-  line-height: 16px;
-  margin-left: 10px;
-  margin-right: 8px;
-  font-size: 14px;
-  text-align: center;
-  cursor: pointer;
-  border-radius: 4px;
-  -webkit-border-radius: 4px;
-  &:hover {
-    background: #4285f4;
+    background-color: #1a73e8;
+    border: none;
+    color: white;
+    padding: 9px 23px;
+    font-weight: 500;
+    letter-spacing: 0.25px;
+    line-height: 16px;
+    margin-left: 10px;
+    margin-right: 8px;
+    font-size: 14px;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    &:hover {
+      background: #4285f4;
+    }
   }
-}
 `;
 
 const Header = ({ isVisibleGmailImage = true }) => {
@@ -48,6 +47,7 @@ const Header = ({ isVisibleGmailImage = true }) => {
     </>
   );
   const renderSpan = () => <span>settings</span>;
+
   return (
     <HeaderRow>
       {isVisibleGmailImage ? renderGmailImage() : renderSpan()}
