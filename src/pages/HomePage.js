@@ -1,4 +1,4 @@
-import { Button, Header, SearchInputField } from 'components';
+import { Button, Footer, Header, SearchInputField } from 'components';
 import styled from 'styled-components';
 
 const MainRow = styled.div`
@@ -22,12 +22,13 @@ const MainRow = styled.div`
 
   Button {
     margin: 11px;
+    color: #3c4043;
   }
 `;
 
 const HomePage = () => (
   <>
-    <Header isVisibleGmailImage={true} />
+    <Header isVisibleGmailImage />
     <MainRow>
       <img src="images/google-logo.svg" alt="Logo do Google" />
       <div className="SearchInputFieldWrapper">
@@ -38,6 +39,7 @@ const HomePage = () => (
         <Button>Estou com sorte</Button>
       </fieldset>
     </MainRow>
+    <Footer />
   </>
 );
 
