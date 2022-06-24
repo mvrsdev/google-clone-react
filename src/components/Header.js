@@ -1,4 +1,5 @@
 import { MdSettings } from 'react-icons/md';
+import { CgMenuGridO } from 'react-icons/cg';
 import styled from 'styled-components';
 import Button from './Button';
 import IconButton from './IconButton';
@@ -9,10 +10,10 @@ const HeaderRow = styled.div`
   justify-content: flex-end;
   color: #000000de;
   align-items: center;
+  font-size: 14px;
   a {
     padding: 15px;
     line-height: 24px;
-    font-size: 14px;
     cursor: pointer;
     color: #000000de;
     text-decoration: none;
@@ -21,9 +22,10 @@ const HeaderRow = styled.div`
     }
   }
 
-Button {
-  margin: 9px 23px;
-}
+  Button {
+    margin: 9px 23px;
+    font-weight: 600;
+  }
 `;
 
 const Header = ({ isVisibleGmailImage }) => {
@@ -42,6 +44,8 @@ const Header = ({ isVisibleGmailImage }) => {
   return (
     <HeaderRow>
       {isVisibleGmailImage ? renderGmailImage() : renderSettings()}
+
+      <CgMenuGridO size={25} />
       <Button primary> Fazer login</Button>
     </HeaderRow>
   );
