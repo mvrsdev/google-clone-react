@@ -1,4 +1,6 @@
+import { MdSettings } from 'react-icons/md';
 import styled from 'styled-components';
+import IconButton from './IconButton';
 
 const HeaderRow = styled.div`
   display: flex;
@@ -37,20 +39,27 @@ const HeaderRow = styled.div`
       background: #4285f4;
     }
   }
+  .material-icons.md-dark {
+    color: rgba(0, 0, 0, 0.54);
+  }
 `;
 
-const Header = ({ isVisibleGmailImage = true }) => {
+const Header = ({ isVisibleGmailImage }) => {
   const renderGmailImage = () => (
     <>
       <a href="index.com">Gmail</a>
       <a href="index.com">Imagens</a>
     </>
   );
-  const renderSpan = () => <span>settings</span>;
+  const renderSettings = () => (
+    <IconButton size="large">
+      <MdSettings size={24} />
+    </IconButton>
+  );
 
   return (
     <HeaderRow>
-      {isVisibleGmailImage ? renderGmailImage() : renderSpan()}
+      {isVisibleGmailImage ? renderGmailImage() : renderSettings()}
       <button id="login-button">Fazer login</button>
     </HeaderRow>
   );
