@@ -1,17 +1,44 @@
-import { Avatar, Button, IconButton, SearchInputField } from 'components';
-import { MdApps } from 'react-icons/md';
+import { Header, SearchInputField } from 'components';
+import styled from 'styled-components';
+
+const HeaderDiv = styled.div`
+  border-bottom: 0.5px solid #e0e0e0;
+  display: flex;
+  flex-direction: column;
+  img {
+    width: 92px;
+    padding: 20px;
+  }
+  .row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .left {
+    display: flex;
+    align-items: center;
+  }
+  .SearchInputFieldWrapper {
+    width: 45vw;
+  }
+`;
 
 const ResultsPage = () => (
-  <>
-    <p>Search Page works!</p>
-    <SearchInputField />
-    <Button primary>Pesquisa Google</Button>
-    <Button>Estou com sorte</Button>
-    <IconButton size="large">
-      <MdApps size={24} />
-    </IconButton>
-    <Avatar />
-  </>
+  <HeaderDiv>
+    <div className="row">
+      <div className="left">
+        <a href="index.html">
+          <img id="logo" src="images/google-logo.svg" alt="Logo do Google" />
+        </a>
+        <div className="SearchInputFieldWrapper">
+          <SearchInputField />
+        </div>
+      </div>
+      <div className="right">
+        <Header isVisibleGmailImage={false} />
+      </div>
+    </div>
+  </HeaderDiv>
 );
 
 export default ResultsPage;

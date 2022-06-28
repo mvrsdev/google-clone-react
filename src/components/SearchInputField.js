@@ -8,7 +8,7 @@ const SearchBox = styled.div`
   align-items: center;
   border-radius: 2rem;
   padding: 0 1rem;
-  min-height: 42px;
+  height: 42px;
   border: 1px solid ${props => props.theme.borderColor};
   transition: all 350ms cubic-bezier(0.165, 0.84, 0.44, 1);
   &:hover,
