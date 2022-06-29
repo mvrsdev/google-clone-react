@@ -23,16 +23,6 @@ const HeaderDiv = styled.div`
   }
 `;
 
-const MainRow = styled.div`
-display: flex;
-flex-direction: column;
-flex-grow: 1;
-.meiote {
-display: flex;
-flex-grow: 1;
-};
-`;
-
 const ResultsPage = () => (
   <>
   <HeaderDiv>
