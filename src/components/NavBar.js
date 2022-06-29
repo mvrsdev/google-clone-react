@@ -3,7 +3,7 @@ import { MdOutlineMoreVert, MdOutlineSmartDisplay } from 'react-icons/md';
 import { BiBookBookmark, BiNews } from 'react-icons/bi';
 import styled from 'styled-components';
 
-const NavContainer = styled`
+const NavContainer = styled.div`
   font-size: 14px;
   ul {
     display: flex;
@@ -19,54 +19,53 @@ const NavContainer = styled`
       display: flex;
       align-items: center;
       text-decoration: none;
-      padding: 0 8px 0 ;
+      padding: 0 8px 0;
       justify-content: space-between;
     }
   }
 `;
 
-const NavBar = () => {
-
-<NavContainer>
-<ul>
-  <li>
-    <a href="index.com">
-      <CgSearch />
-      Todas
-    </a>
-  </li>
-  <li>
-    <a href="index.com">
-      <CgImage />
-      Imagens
-    </a>
-  </li>
-  <li>
-    <a href="index.com">
-      <MdOutlineSmartDisplay />
-      Videos
-    </a>
-  </li>
-  <li>
-    <a href="index.com">
-      <BiNews />
-      Notícias
-    </a>
-  </li>
-  <li>
-    <a href="index.com">
-      <BiBookBookmark />
-      Livros
-    </a>
-  </li>
-  <li>
-    <a href="index.com">
-      <MdOutlineMoreVert size={16} />
-      Mais
-    </a>
-  </li>
-</ul>
-</NavContainer>;
-};
+const NavBar = () => (
+  <NavContainer>
+    <ul>
+      <li>
+        <a href="index.com">
+          <CgSearch />
+          Todas
+        </a>
+      </li>
+      <li>
+        <a href="index.com">
+          <CgImage />
+          Imagens
+        </a>
+      </li>
+      <li>
+        <a href="index.com">
+          <MdOutlineSmartDisplay />
+          Videos
+        </a>
+      </li>
+      <li>
+        <a href="index.com">
+          <BiNews />
+          Notícias
+        </a>
+      </li>
+      <li>
+        <a href="index.com">
+          <BiBookBookmark />
+          Livros
+        </a>
+      </li>
+      <li>
+        <a href="index.com">
+          <MdOutlineMoreVert size={16} />
+          Mais
+        </a>
+      </li>
+    </ul>
+  </NavContainer>
+);
 
 export default NavBar;
