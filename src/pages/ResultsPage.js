@@ -23,28 +23,35 @@ const HeaderDiv = styled.div`
   }
 `;
 
+const MainRow = styled.div`
+display: flex;
+flex-direction: column;
+flex-grow: 1;
+.meiote {
+display: flex;
+flex-grow: 1;
+};
+`;
+
 const ResultsPage = () => (
   <>
-    <HeaderDiv>
-      <div className="row">
-        <div className="left">
-          <a href="index.html">
-            <img id="logo" src="images/google-logo.svg" alt="Logo do Google" />
-          </a>
-          <div className="SearchInputFieldWrapper">
-            <SearchInputField />
-          </div>
-        </div>
-        <div className="right">
-          <Header isVisibleGmailImage={false} />
+  <HeaderDiv>
+    <div className="row">
+      <div className="left">
+        <a href="index.html">
+          <img id="logo" src="images/google-logo.svg" alt="Logo do Google" />
+        </a>
+        <div className="SearchInputFieldWrapper">
+          <SearchInputField />
         </div>
       </div>
-      <NavBar />
-    </HeaderDiv>
-    <main>
-      <p>This is Main!</p>
-    </main>
-    <Footer />
+      <div className="right">
+        <Header isVisibleGmailImage={false} />
+      </div>
+    </div>
+    <NavBar />
+  </HeaderDiv>
+  <Footer/>
   </>
 );
 
