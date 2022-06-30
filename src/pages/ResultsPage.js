@@ -1,4 +1,4 @@
-import { Footer, Header, NavBar, SearchInputField } from 'components';
+import { Article, Footer, Header, NavBar, SearchInputField } from 'components';
 import styled from 'styled-components';
 
 const HeaderDiv = styled.div`
@@ -41,6 +41,11 @@ const ResultsPage = () => (
     </div>
     <NavBar />
   </HeaderDiv>
+  <Article/>
+  <Article/>
+  <Article/>
+  <Article/>
+  <Article/>
   <Footer/>
   </>
 );
