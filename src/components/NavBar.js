@@ -4,24 +4,24 @@ import { BiBookBookmark, BiNews } from 'react-icons/bi';
 import styled from 'styled-components';
 
 const NavContainer = styled.div`
-  font-size: 14px;
   ul {
     display: flex;
+    li {
+      list-style: none;
+      &:hover {
+        color: #1a73e8;
+        border-bottom: 3px solid #1a73e8;
+      }
+    }
   }
-  li {
-    list-style: none;
-    &:hover {
-      color: #1a73e8;
-      border-bottom: 3px solid #1a73e8;
-    }
-    a {
-      color: #5f6368;
-      display: flex;
-      align-items: center;
-      text-decoration: none;
-      padding: 0 8px 0;
-      justify-content: space-between;
-    }
+  a {
+    color: #5f6368;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    padding: 0 18px 0;
+    font-weight: 440;
+    font-size: 14px;
   }
 `;
 

@@ -28,7 +28,7 @@ const ResultsPage = () => (
   <HeaderDiv>
     <div className="row">
       <div className="left">
-        <a href="index.html">
+        <a href="">
           <img id="logo" src="images/google-logo.svg" alt="Logo do Google" />
         </a>
         <div className="SearchInputFieldWrapper">
