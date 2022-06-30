@@ -45,7 +45,9 @@ const Header = ({ isVisibleGmailImage }) => {
     <HeaderRow>
       {isVisibleGmailImage ? renderGmailImage() : renderSettings()}
 
-      <CgMenuGridO size={25} />
+      <IconButton>
+        <CgMenuGridO size={25} />
+      </IconButton>
       <Button primary> Fazer login</Button>
     </HeaderRow>
   );
