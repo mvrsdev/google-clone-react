@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { MdKeyboardAlt, MdMic, MdSearch } from 'react-icons/md';
 import styled from 'styled-components';
 
@@ -39,17 +40,37 @@ const IconedButton = styled.button`
   cursor: pointer;
 `;
 
-const SearchInputField = () => (
-  <SearchBox>
-    <MdSearch size="1.5em" color={iconColor} />
-    <InputField type="search" />
-    <IconedButton>
-      <MdKeyboardAlt size="1.5em" color={iconColor} />
-    </IconedButton>
-    <IconedButton>
-      <MdMic size="1.5em" color={iconColor} />
-    </IconedButton>
-  </SearchBox>
-);
+const SearchInputField = ({ onSearchChange, onPressEnter }) => {
+  const [searchTerm, setSearchTerm] = useState('');
+
+  const searchChangeHandler = searchTerm => {
+    setSearchTerm(searchTerm);
+    onSearchChange && onSearchChange(searchTerm);
+  };
+
+  const keyDownHandler = key => {
+    if (key === 'Enter') {
+      onPressEnter && onPressEnter(searchTerm);
+    }
+  };
+
+  return (
+    <SearchBox>
+      <MdSearch size="1.5em" color={iconColor} />
+      <InputField
+        type="search"
+        value={searchTerm}
+        onChange={event => searchChangeHandler(event.target.value)}
+        onKeyDown={event => keyDownHandler(event.key)}
+      />
+      <IconedButton>
+        <MdKeyboardAlt size="1.5em" color={iconColor} />
+      </IconedButton>
+      <IconedButton>
+        <MdMic size="1.5em" color={iconColor} />
+      </IconedButton>
+    </SearchBox>
+  );
+};
 
 export default SearchInputField;

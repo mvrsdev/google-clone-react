@@ -28,7 +28,7 @@ const HeaderRow = styled.div`
   }
 `;
 
-const Header = ({ isVisibleGmailImage }) => {
+const Header = ({ isVisibleGmailImage, onLoginClick }) => {
   const renderGmailImage = () => (
     <>
       <a href="index.com">Gmail</a>
@@ -48,7 +48,7 @@ const Header = ({ isVisibleGmailImage }) => {
       <IconButton>
         <CgMenuGridO size={25} />
       </IconButton>
-      <Button primary> Fazer login</Button>
+      <Button primary>Fazer login</Button>
     </HeaderRow>
   );
 };

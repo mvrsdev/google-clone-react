@@ -1,4 +1,6 @@
 import { Button, Footer, Header, SearchInputField } from 'components';
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 
 const MainRow = styled.div`
@@ -26,21 +28,40 @@ const MainRow = styled.div`
   }
 `;
 
-const HomePage = () => (
-  <>
-    <Header isVisibleGmailImage />
-    <MainRow>
-      <img src="images/google-logo.svg" alt="Logo do Google" />
-      <div className="SearchInputFieldWrapper">
-        <SearchInputField />
-      </div>
-      <fieldset>
-        <Button>Pesquisa Google</Button>
-        <Button>Estou com sorte</Button>
-      </fieldset>
-    </MainRow>
-    <Footer />
-  </>
-);
+const HomePage = () => {
+  const [searchTerm, setSearchTerm] = useState('');
+  const navigate = useNavigate();
+
+  const onPressHandler = searchValue => {
+    if (searchValue !== 'Gay') {
+      navigate('/results');
+      setSearchTerm(searchValue);
+    } else {
+      alert('Preconceituoso!');
+    }
+  };
+
+  const loginClickHandler = () => {
+    // Do something here
+  };
+
+  return (
+    <>
+      <Header onLoginClick={loginClickHandler} isVisibleGmailImage />
+      <MainRow>
+        <img src="images/google-logo.svg" alt="Logo do Google" />
+        <p>{searchTerm}</p>
+        <div className="SearchInputFieldWrapper">
+          <SearchInputField onPressEnter={onPressHandler} />
+        </div>
+        <fieldset>
+          <Button>Pesquisa Google</Button>
+          <Button>Estou com sorte</Button>
+        </fieldset>
+      </MainRow>
+      <Footer />
+    </>
+  );
+};
 
 export default HomePage;
