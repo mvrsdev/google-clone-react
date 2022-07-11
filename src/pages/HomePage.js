@@ -33,21 +33,13 @@ const HomePage = () => {
   const navigate = useNavigate();
 
   const onPressHandler = searchValue => {
-    if (searchValue !== 'Gay') {
-      navigate('/results');
-      setSearchTerm(searchValue);
-    } else {
-      alert('Preconceituoso!');
-    }
-  };
-
-  const loginClickHandler = () => {
-    // Do something here
+    navigate('/results');
+    setSearchTerm(searchValue);
   };
 
   return (
     <>
-      <Header onLoginClick={loginClickHandler} isVisibleGmailImage />
+      <Header isVisibleGmailImage />
       <MainRow>
         <img src="images/google-logo.svg" alt="Logo do Google" />
         <p>{searchTerm}</p>

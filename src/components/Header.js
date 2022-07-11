@@ -3,6 +3,7 @@ import { CgMenuGridO } from 'react-icons/cg';
 import styled from 'styled-components';
 import Button from './Button';
 import IconButton from './IconButton';
+import { useNavigate } from 'react-router-dom';
 
 const HeaderRow = styled.div`
   display: flex;
@@ -28,7 +29,8 @@ const HeaderRow = styled.div`
   }
 `;
 
-const Header = ({ isVisibleGmailImage, onLoginClick }) => {
+const Header = ({ isVisibleGmailImage }) => {
+  const navigate = useNavigate();
   const renderGmailImage = () => (
     <>
       <a href="index.com">Gmail</a>
@@ -41,6 +43,10 @@ const Header = ({ isVisibleGmailImage, onLoginClick }) => {
     </IconButton>
   );
 
+  const loginClickHandler = () => {
+    navigate('/login');
+  };
+
   return (
     <HeaderRow>
       {isVisibleGmailImage ? renderGmailImage() : renderSettings()}
@@ -48,7 +54,7 @@ const Header = ({ isVisibleGmailImage, onLoginClick }) => {
       <IconButton>
         <CgMenuGridO size={25} />
       </IconButton>
-      <Button primary>Fazer login</Button>
+      <Button primary onClick={loginClickHandler}>Fazer login</Button>
     </HeaderRow>
   );
 };
