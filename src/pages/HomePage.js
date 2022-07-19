@@ -1,4 +1,10 @@
-import { Button, Footer, Header, SearchInputField } from 'components';
+import {
+  Button,
+  Footer,
+  Header,
+  PageContainer,
+  SearchInputField,
+} from 'components';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
@@ -6,9 +12,9 @@ import styled from 'styled-components';
 const MainRow = styled.div`
   display: flex;
   flex-direction: column;
-  height: 84vh;
   align-items: center;
   justify-content: center;
+  flex-grow: 1;
 
   .SearchInputFieldWrapper {
     width: 45vw;
@@ -32,19 +38,22 @@ const HomePage = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const navigate = useNavigate();
 
-  const onPressHandler = searchValue => {
-    navigate('/results');
+  const onSearchHandler = searchValue => {
+    navigate({
+      pathname: '/results',
+      search: `?q=${searchValue}`,
+    });
     setSearchTerm(searchValue);
   };
 
   return (
-    <>
+    <PageContainer>
       <Header isVisibleGmailImage />
       <MainRow>
         <img src="images/google-logo.svg" alt="Logo do Google" />
         <p>{searchTerm}</p>
         <div className="SearchInputFieldWrapper">
-          <SearchInputField onPressEnter={onPressHandler} />
+          <SearchInputField onPressEnter={onSearchHandler} />
         </div>
         <fieldset>
           <Button>Pesquisa Google</Button>
@@ -52,7 +61,7 @@ const HomePage = () => {
         </fieldset>
       </MainRow>
       <Footer />
-    </>
+    </PageContainer>
   );
 };
 
