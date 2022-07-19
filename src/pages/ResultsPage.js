@@ -1,5 +1,12 @@
-import { Article, Footer, Header, NavBar, SearchInputField } from 'components';
-import { Link } from 'react-router-dom';
+import {
+  Article,
+  Footer,
+  Header,
+  NavBar,
+  PageContainer,
+  SearchInputField,
+} from 'components';
+import { Link, useSearchParams } from 'react-router-dom';
 import styled from 'styled-components';
 
 const HeaderDiv = styled.div`
@@ -24,31 +31,45 @@ const HeaderDiv = styled.div`
   }
 `;
 
-const ResultsPage = () => (
-  <>
-    <HeaderDiv>
-      <div className="row">
-        <div className="left">
-          <Link to={'/'}>
-            <img id="logo" src="images/google-logo.svg" alt="Logo do Google" />
-          </Link>
-          <div className="SearchInputFieldWrapper">
-            <SearchInputField />
+const ResultsList = styled.div`
+  height: 100vh;
+`;
+
+const ResultsPage = () => {
+  const [searchTerm] = useSearchParams();
+
+  return (
+    <PageContainer>
+      <HeaderDiv>
+        <div className="row">
+          <div className="left">
+            <Link to={'/'}>
+              <img
+                id="logo"
+                src="images/google-logo.svg"
+                alt="Logo do Google"
+              />
+            </Link>
+            <div className="SearchInputFieldWrapper">
+              <SearchInputField value={searchTerm.get('q')} />
+            </div>
+          </div>
+          <div className="right">
+            <Header isVisibleGmailImage={false} />
           </div>
         </div>
-        <div className="right">
-          <Header isVisibleGmailImage={false} />
-        </div>
-      </div>
-      <NavBar />
-    </HeaderDiv>
-    <Article />
-    <Article />
-    <Article />
-    <Article />
-    <Article />
-    <Footer />
-  </>
-);
+        <NavBar />
+      </HeaderDiv>
+      <ResultsList>
+        <Article />
+        <Article />
+        <Article />
+        <Article />
+        <Article />
+      </ResultsList>
+      <Footer />
+    </PageContainer>
+  );
+};
 
 export default ResultsPage;
