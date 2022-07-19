@@ -22,6 +22,9 @@ const NavContainer = styled.div`
     padding: 0 18px 0;
     font-weight: 440;
     font-size: 14px;
+    span {
+      margin-left: 8px;
+    }
   }
 `;
 
@@ -31,37 +34,37 @@ const NavBar = () => (
       <li>
         <a href="index.com">
           <CgSearch />
-          Todas
+          <span>Todas</span>
         </a>
       </li>
       <li>
         <a href="index.com">
           <CgImage />
-          Imagens
+          <span>Imagens</span>
         </a>
       </li>
       <li>
         <a href="index.com">
           <MdOutlineSmartDisplay />
-          Videos
+          <span>Videos</span>
         </a>
       </li>
       <li>
         <a href="index.com">
           <BiNews />
-          Notícias
+          <span>Notícias</span>
         </a>
       </li>
       <li>
         <a href="index.com">
           <BiBookBookmark />
-          Livros
+          <span>Livros</span>
         </a>
       </li>
       <li>
         <a href="index.com">
           <MdOutlineMoreVert size={16} />
-          Mais
+          <span>Mais</span>
         </a>
       </li>
     </ul>
