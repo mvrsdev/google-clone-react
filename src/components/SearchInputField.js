@@ -40,8 +40,8 @@ const IconedButton = styled.button`
   cursor: pointer;
 `;
 
-const SearchInputField = ({ onSearchChange, onPressEnter }) => {
-  const [searchTerm, setSearchTerm] = useState('');
+const SearchInputField = ({ onSearchChange, onPressEnter, value }) => {
+  const [searchTerm, setSearchTerm] = useState(value);
 
   const searchChangeHandler = searchTerm => {
     setSearchTerm(searchTerm);
