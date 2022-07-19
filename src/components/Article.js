@@ -39,15 +39,6 @@ const Article = () => (
         </a>
       </li>
     </ul>
-    {/* <ul>
-      <li>
-        <a>
-          <p className='link'>{link}</p>
-          <h3>{title}</h3>
-          <p>{description}</p>
-        </a>
-      </li>
-    </ul> */}
   </ArticleContainer>
 );
 
