@@ -83,7 +83,6 @@ const LoginContainer = styled.div`
     justify-content: space-between;
     width: 100%;
     margin-top: 40px;
-    /* padding-bottom: 20px; */
   }
 `;
 
