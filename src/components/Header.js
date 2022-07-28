@@ -7,24 +7,25 @@ import { useNavigate } from 'react-router-dom';
 
 const HeaderRow = styled.div`
   display: flex;
-  height: 60px;
-  justify-content: flex-end;
-  color: #000000de;
   align-items: center;
+  justify-content: flex-end;
+  min-height: 60px;
   font-size: 14px;
+  padding: 8px 24px 8px 16px;
+
   a {
     padding: 15px;
     line-height: 24px;
     cursor: pointer;
-    color: #000000de;
+    color: ${prop => prop.theme.defaultColorText};
     text-decoration: none;
     &:hover {
       text-decoration: underline;
     }
   }
 
-  Button {
-    margin: 9px 23px;
+  #login-button {
+    margin-left: 8px;
     font-weight: 600;
   }
 `;
@@ -51,10 +52,12 @@ const Header = ({ isVisibleGmailImage }) => {
     <HeaderRow>
       {isVisibleGmailImage ? renderGmailImage() : renderSettings()}
 
-      <IconButton>
-        <CgMenuGridO size={25} />
+      <IconButton size="large">
+        <CgMenuGridO size={24} />
       </IconButton>
-      <Button primary onClick={loginClickHandler}>Fazer login</Button>
+      <Button id="login-button" primary onClick={loginClickHandler}>
+        Fazer login
+      </Button>
     </HeaderRow>
   );
 };

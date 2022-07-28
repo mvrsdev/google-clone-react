@@ -17,9 +17,11 @@ const MainRow = styled.div`
   flex-grow: 1;
 
   .SearchInputFieldWrapper {
-    width: 45vw;
-    padding-top: 40px;
+    width: 85vw;
+    padding-top: 24px;
     padding-bottom: 16px;
+    min-width: 400px;
+    max-width: 650px;
   }
 
   fieldset {
@@ -51,7 +53,6 @@ const HomePage = () => {
       <Header isVisibleGmailImage />
       <MainRow>
         <img src="images/google-logo.svg" alt="Logo do Google" />
-        <p>{searchTerm}</p>
         <div className="SearchInputFieldWrapper">
           <SearchInputField onPressEnter={onSearchHandler} />
         </div>
